@@ -1,0 +1,59 @@
+<footer style="background: var(--bg-card); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 0;">
+    <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
+        <div class="row align-items-center">
+
+            <!-- Sinistra: nome + ultima modifica -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--text-primary); letter-spacing: -0.03em;">
+                    AR.dev
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+                    Last updated: {{ "now" | date: "%b %Y" }}
+                </div>
+            </div>
+
+            <!-- Centro: link rapidi -->
+            <div class="col-md-4 mb-3 mb-md-0 text-center">
+                <div style="display: flex; justify-content: center; gap: 1.2rem;">
+                    {% for item in site.data.navigation.pages %}
+                    <a href="{{ item.url | relative_url }}"
+                       style="font-size: 0.78rem; color: var(--text-muted); transition: var(--transition);"
+                       onmouseover="this.style.color='var(--accent)'"
+                       onmouseout="this.style.color='var(--text-muted)'">
+                        {{ item.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Destra: social -->
+            <div class="col-md-4 text-md-right">
+                <div style="display: flex; justify-content: flex-end; gap: 0.8rem;">
+                    {% if site.data.profile.github %}
+                    <a href="https://github.com/{{ site.data.profile.github }}" target="_blank"
+                       style="color: var(--text-muted); transition: var(--transition);"
+                       onmouseover="this.style.color='var(--text-primary)'"
+                       onmouseout="this.style.color='var(--text-muted)'">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    {% endif %}
+                    {% if site.data.profile.linkedin %}
+                    <a href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}" target="_blank"
+                       style="color: var(--text-muted); transition: var(--transition);"
+                       onmouseover="this.style.color='#0077b5'"
+                       onmouseout="this.style.color='var(--text-muted)'">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    {% endif %}
+                    <a href="mailto:{{ site.data.profile.email }}"
+                       style="color: var(--text-muted); transition: var(--transition);"
+                       onmouseover="this.style.color='var(--accent)'"
+                       onmouseout="this.style.color='var(--text-muted)'">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

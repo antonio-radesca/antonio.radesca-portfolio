@@ -1,0 +1,25 @@
+# Site settings
+title: Antonio Radesca
+email: antonio.radesca.work@gmail.com
+description: >- # Descrizione che appare nei motori di ricerca
+  Ingegnere Informatico specializzato in Backend Development, IoT e integrazione di sistemi. 
+  Esperienza con Python (FastAPI), PostgreSQL e protocolli industriali.
+
+# IMPORTANTE: Cambia questo con il nome esatto del tuo repository su GitHub
+baseurl: "/antonio.radesca-portfolio" 
+url: "https://antonio-radesca.github.io" # Il tuo URL base di GitHub Pages
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-email-protect
+  - jekyll-feed # Opzionale, utile per indicizzazione
+
+# Personal Information (Variabili personalizzate per il template)
+author:
+  name: Antonio Radesca
+  position: Computer Engineer
+  location: Salerno, Italy
+  linkedin: antonio-radesca-99445939b # Inserisci il tuo ID finale di LinkedIn
+  github: antonio-radesca
+  

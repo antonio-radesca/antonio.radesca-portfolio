@@ -1,0 +1,387 @@
+---
+layout: default
+title: Projects
+navbar_title: Projects
+---
+
+<div class="row">
+  <div class="col-12">
+    <div class="fade-in-up fade-in-up-1 mb-4">
+      <h2 style="font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em;">
+        Projects
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">
+        Projects developed during my academic and professional journey.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-12 fade-in-up fade-in-up-2">
+    <div class="project-card">
+
+      <!-- Header -->
+      <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap gap-2">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--accent); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em;">
+            Internship · Garofalo &amp; Partners · Sep–Nov 2025
+          </div>
+          <div class="project-title" style="font-size: 1.15rem;">
+            Integrated Industrial Monitoring System (Industry 4.0)
+          </div>
+        </div>
+        <i class="fas fa-microchip" style="color: var(--accent); font-size: 1.3rem; opacity: 0.5; margin-top: 4px;"></i>
+      </div>
+
+      <!-- Description -->
+      <p class="project-description">
+        End-to-end system for the acquisition, storage and real-time visualization
+        of data from industrial PLCs via the <strong style="color: var(--text-primary);">Modbus</strong> protocol.
+        The system collects process variables (temperatures, pressures, machine states),
+        persists them on <strong style="color: var(--text-primary);">PostgreSQL</strong> and exposes them
+        via <strong style="color: var(--text-primary);">RESTful API and WebSocket</strong>
+        for remote real-time monitoring.
+      </p>
+
+      <!-- Image carousel -->
+      <div class="mb-4">
+        <div class="section-heading">
+          <i class="fas fa-images" style="color: var(--accent); font-size: 0.65rem;"></i>
+          Screenshots
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+
+            <div class="carousel-slide">
+              <img src="/antonio.radesca-portfolio/assets/images/project/hmi-dashboard.png"
+                   alt="Grafana HMI Panel — PLC Dashboard" />
+              <div class="carousel-caption">
+                <span class="carousel-caption-tag">Grafana HMI</span>
+                Real-time machine panel — status, CPU temperature, production speed and active alerts
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="/antonio.radesca-portfolio/assets/images/project/moduview-login.png"
+                   alt="ModuView — Login Web Application" />
+              <div class="carousel-caption">
+                <span class="carousel-caption-tag">Web App · Vue.js</span>
+                Login page for ModuView, the web application for remote data monitoring
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <img src="/antonio.radesca-portfolio/assets/images/project/alert-history.png"
+                   alt="Alert and Warning History" />
+              <div class="carousel-caption">
+                <span class="carousel-caption-tag">Grafana HMI</span>
+                Alert/Warning history with timestamp, type and recovery status — updated in real-time
+              </div>
+            </div>
+
+          </div>
+          </div><!-- end viewport -->
+
+          <!-- Controls -->
+          <button class="carousel-btn carousel-btn-prev" onclick="carouselMove(-1)" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-btn-next" onclick="carouselMove(1)" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Dots -->
+          <div class="carousel-dots" id="carouselDots">
+            <button class="carousel-dot active" onclick="carouselGoTo(0)"></button>
+            <button class="carousel-dot" onclick="carouselGoTo(1)"></button>
+            <button class="carousel-dot" onclick="carouselGoTo(2)"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="mb-3">
+        <div class="section-heading">
+          <i class="fas fa-layer-group" style="color: var(--accent); font-size: 0.65rem;"></i>
+          Architecture
+        </div>
+        <div class="row g-2">
+          <div class="col-12 col-sm-4">
+            <div style="background: rgba(0,102,255,0.05); border: 1px solid rgba(0,102,255,0.15); border-radius: 10px; padding: 0.9rem 1rem;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-bottom: 0.3rem; text-transform: uppercase;">Data Acquisition</div>
+              <div style="font-size: 0.82rem; color: #e6edf3;">Modbus client that periodically reads variables from simulated PLCs and writes them to the DB</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div style="background: rgba(0,102,255,0.05); border: 1px solid rgba(0,102,255,0.15); border-radius: 10px; padding: 0.9rem 1rem;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-bottom: 0.3rem; text-transform: uppercase;">Backend / API</div>
+              <div style="font-size: 0.82rem; color: #e6edf3;">FastAPI + Uvicorn server with async handling (asyncio), REST and real-time WebSocket</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div style="background: rgba(0,102,255,0.05); border: 1px solid rgba(0,102,255,0.15); border-radius: 10px; padding: 0.9rem 1rem;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-bottom: 0.3rem; text-transform: uppercase;">Visualization</div>
+              <div style="font-size: 0.82rem; color: #e6edf3;">Grafana dashboard (HMI) + Vue.js web app for monitoring and remote data access</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Contribution -->
+      <div class="mb-4">
+        <div class="section-heading">
+          <i class="fas fa-user-check" style="color: var(--accent); font-size: 0.65rem;"></i>
+          My Contribution
+        </div>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; margin: 0; padding-left: 1.2rem;">
+          <li>Design and implementation of the <strong style="color: var(--text-primary);">HMI panel on Grafana</strong>, with dynamic dashboards connected to PostgreSQL</li>
+          <li>Development of the <strong style="color: var(--text-primary);">backend with FastAPI</strong>: DB access logic, RESTful API routing, WebSocket channel for real-time updates</li>
+          <li>Async I/O management with <strong style="color: var(--text-primary);">asyncio</strong> and CORS Middleware configuration</li>
+        </ul>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mb-2">
+        <div class="section-heading">
+          <i class="fas fa-tools" style="color: var(--accent); font-size: 0.65rem;"></i>
+          Tech Stack
+        </div>
+        <div class="tech-stack-grid">
+
+          <div class="tech-group">
+            <div class="tech-group-label">Backend</div>
+            <div class="tech-group-items">
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#3776ab;"><i class="fab fa-python"></i></span>Python</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#009688;"><i class="fas fa-bolt"></i></span>FastAPI</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#6b4fbb;"><i class="fas fa-server"></i></span>Uvicorn</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#3776ab;"><i class="fas fa-sync-alt"></i></span>asyncio</div>
+            </div>
+          </div>
+
+          <div class="tech-group">
+            <div class="tech-group-label">Database & API</div>
+            <div class="tech-group-items">
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#336791;"><i class="fas fa-database"></i></span>PostgreSQL</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#0066ff;"><i class="fas fa-plug"></i></span>REST API</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#1a7c4f;"><i class="fas fa-exchange-alt"></i></span>WebSocket</div>
+            </div>
+          </div>
+
+          <div class="tech-group">
+            <div class="tech-group-label">IoT & Industry</div>
+            <div class="tech-group-items">
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#e05b2b;"><i class="fas fa-industry"></i></span>Modbus</div>
+            </div>
+          </div>
+
+          <div class="tech-group">
+            <div class="tech-group-label">Frontend & Viz</div>
+            <div class="tech-group-items">
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#f4511e;"><i class="fas fa-chart-line"></i></span>Grafana</div>
+              <div class="tech-pill"><span class="tech-pill-icon" style="background:#42b883;"><i class="fab fa-vuejs"></i></span>Vue.js</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="mt-5 text-center fade-in-up fade-in-up-4">
+  <p style="color: var(--text-muted); font-size: 0.8rem;">
+    More projects coming soon —
+    <a href="https://github.com/antonio-radesca" target="_blank">follow my GitHub</a>
+  </p>
+</div>
+
+<!-- ═══ STYLES ═══════════════════════════════════════════════════════ -->
+<style>
+/* Tech Stack */
+.tech-stack-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.tech-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.tech-group-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+.tech-group-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tech-pill { display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 0.3rem 0.7rem 0.3rem 0.35rem; font-size: 0.8rem; font-weight: 500; color: var(--text-primary); transition: all 0.2s ease; cursor: default; }
+.tech-pill:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
+.tech-pill-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 5px; font-size: 0.65rem; color: #fff; flex-shrink: 0; }
+
+/* Carosello */
+.carousel-wrapper {
+  position: relative;
+  border-radius: 12px;
+  background: #0a0e14;
+  border: 1px solid var(--border);
+  user-select: none;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  width: 100%;
+  min-width: 100%;
+  flex: 0 0 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide img {
+    height: 200px;
+    object-position: top center;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.4rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.carousel-caption-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  display: block;
+  width: fit-content;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  font-size: 0.8rem;
+  backdrop-filter: blur(6px);
+}
+.carousel-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.08);
+}
+.carousel-btn-prev { left: 12px; }
+.carousel-btn-next { right: 12px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.carousel-dot.active {
+  background: #fff;
+  width: 20px;
+  border-radius: 4px;
+}
+</style>
+
+<!-- ═══ SCRIPT ════════════════════════════════════════════════════════ -->
+<script>
+(function() {
+  var current = 0;
+  var total = 3;
+  var track = document.getElementById('carouselTrack');
+  var dots = document.querySelectorAll('.carousel-dot');
+  var autoInterval;
+
+  function update() {
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  window.carouselMove = function(dir) {
+    current = (current + dir + total) % total;
+    update();
+    resetAuto();
+  };
+
+  window.carouselGoTo = function(idx) {
+    current = idx;
+    update();
+    resetAuto();
+  };
+
+  function resetAuto() {
+    clearInterval(autoInterval);
+    autoInterval = setInterval(function() {
+      current = (current + 1) % total;
+      update();
+    }, 4500);
+  }
+
+  // Swipe support mobile
+  var startX = 0;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; });
+  track.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) carouselMove(diff > 0 ? 1 : -1);
+  });
+
+  resetAuto();
+})();
+</script>

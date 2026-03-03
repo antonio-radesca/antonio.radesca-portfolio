@@ -1,0 +1,31 @@
+primary_name: "Antonio Radesca"
+navbar_name: "AR.dev"
+email: "antonio.radesca.work@gmail.com"
+positions:
+  - name: Computer Engineer
+    logo: /assets/images/badges/logo_standard.png
+github: antonio-radesca
+linkedin: "antonio-radesca-99445939b/"
+short_bio_text_justify: false
+short_bio: |
+  <p>
+  <strong>Hello everyone!</strong> My name is <strong>Antonio Radesca</strong> and I'm a Computer Engineering graduate from the University of Salerno with a passion for building things that actually work. My go-to stack includes C, Java, SQL and Python, but I'm always eager to dive into new challenges and pick up whatever the problem requires.
+  </p>
+  <p>
+  When I'm not staring at code, you'll probably find me strumming my guitar, lost in a video game or a good movie, or playing sports — I'm a firm believer in the power of a good team, both on the field and in the office.
+  </p>
+  <p>
+  I'm a proactive learner and a natural team player, ready to bring both technical skills and positive energy to an environment where I can help build efficient, data-driven solutions.
+  </p>
+
+portrait_url: "/assets/photos/Immagine_profilo.PNG"
+education:
+  - name: "University of Salerno"
+    logo: "/assets/images/badges/logo_standard.png"
+    position: "Bachelor's Degree in Computer Engineering (L-8) - DIEM"
+    date: "December 2025"
+experience:
+  - name: "Garofalo & Partners"
+    logo: "/assets/images/badges/garofalo.png"
+    position: "Internship"
+    date: "Sep 2025 - Nov 2025"

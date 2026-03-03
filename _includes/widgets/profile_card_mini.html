@@ -1,0 +1,113 @@
+<div class="row sticky-top" style="top: 80px">
+    <div class="col">
+        <div class="card border-0 shadow-sm" style="border-radius: 16px; overflow: hidden;">
+            <div class="card-body px-4 pt-4 pb-4">
+
+                <!-- Portrait -->
+                <div class="row">
+                    <div class="col text-center">
+                        {% if site.data.profile.portrait_url %}
+                        <div class="mb-3" style="position: relative; display: inline-block;">
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}"
+                                 class="rounded-circle"
+                                 style="width: 150px; height: 150px; object-fit: cover;
+                                        border: 3px solid var(--accent, #4f8ef7);
+                                        box-shadow: 0 4px 18px rgba(79,142,247,0.18);"
+                                 alt="Portrait">
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Name -->
+                <div class="row">
+                    <div class="col text-center" style="font-size: 1.2rem; font-weight: 700; letter-spacing: -0.3px; color: var(--text-primary, #1a1a2e);">
+                        {{ site.data.profile.primary_name }}
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="row mt-1 mb-1">
+                    <div class="col text-center">
+                        <span style="font-size: 0.78rem; font-weight: 600; color: var(--accent, #4f8ef7); letter-spacing: 0.5px; text-transform: uppercase;">
+                            Computer Engineer
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="row mb-2">
+                    <div class="col text-center">
+                        <span style="font-size: 0.8rem; color: #e6edf3;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent, #4f8ef7); margin-right: 6px;"></i>
+                            Montesano Sulla Marcellana, Italy
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Open to work badge -->
+                <div class="row mb-3">
+                    <div class="col text-center">
+                        <span style="display: inline-flex; align-items: center; gap: 5px;
+                                     background: rgba(34,197,94,0.10); border: 1px solid rgba(34,197,94,0.25);
+                                     border-radius: 20px; padding: 3px 12px;">
+                            <span class="status-dot"></span>
+                            <span style="font-size: 0.70rem; color: #16a34a; font-weight: 500;">Open to work</span>
+                        </span>
+                    </div>
+                </div>
+
+                <hr style="opacity: 0.12; margin: 0 -4px 12px;" />
+
+                <!-- Skill tags -->
+                <div class="row mb-3">
+                    <div class="col text-center" style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
+                        {% assign skills = "Python,SQL,Java,C" | split: "," %}
+                        {% for skill in skills %}
+                        <span style="font-size: 0.68rem; font-weight: 500;
+                                     background: var(--tag-bg, #f0f4ff); color: var(--accent, #4f8ef7);
+                                     border-radius: 20px; padding: 3px 10px;
+                                     border: 1px solid rgba(79,142,247,0.2);">
+                            {{ skill }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <hr style="opacity: 0.12; margin: 0 -4px 14px;" />
+
+                <!-- Social buttons -->
+                <div class="row pt-1">
+                    <div class="col d-flex justify-content-center" style="gap: 10px;">
+
+                        {% if site.data.profile.github %}
+                        <a target="_blank"
+                           href="https://github.com/{{ site.data.profile.github }}"
+                           title="GitHub"
+                           class="social-btn social-btn-github">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.linkedin %}
+                        <a target="_blank"
+                           href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}"
+                           title="LinkedIn"
+                           class="social-btn social-btn-linkedin">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        {% endif %}
+
+                        <a href="mailto:{{ site.data.profile.email }}"
+                           title="Email"
+                           class="social-btn social-btn-email">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

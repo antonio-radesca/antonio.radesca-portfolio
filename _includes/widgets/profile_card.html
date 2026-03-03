@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-5">
+                <div class="row">
+                    <div class="col">
+                        {% if site.data.profile.portrait_url %}
+                        <div class="figure float-right ml-4 mb-4 d-none d-md-block">
+                            <img src="{{ site.data.profile.portrait_url | relative_url }}" 
+                                 class="figure-img img-fluid rounded-circle shadow-sm" 
+                                 style="height: 200px; width: 200px; object-fit: cover;" alt="Portrait">
+                        </div>
+                        {% endif %}
+
+                        <div class="d-flex">
+                            <div class="h1 font-weight-normal">{{ site.data.profile.primary_name }}</div>
+                        </div>
+
+                        <div class="text-profile-position">
+                            {% for position in site.data.profile.positions %}
+                                {{ position.name }}<br/>
+                            {% endfor %}
+                        </div>
+
+                        <div class="text-profile-bio mt-3">
+                            {{ site.data.profile.short_bio }}
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="row mt-4">
+                    <div class="col-12 d-flex flex-wrap">
+                        
+                        <a class="btn btn-outline-primary btn-lg mr-3 mb-3" href="mailto:{{ site.data.profile.email }}" style="border-radius: 50px; font-weight: 500;">
+                            <i class="fas fa-at"></i> Email
+                        </a>
+                        
+                        {% if site.data.profile.github %}
+                        <a class="btn btn-outline-dark btn-lg mr-3 mb-3" target="_blank" href="https://github.com/{{ site.data.profile.github }}" style="border-radius: 50px; font-weight: 500;">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        {% endif %}
+                        
+                        {% if site.data.profile.linkedin %}
+                        <a class="btn btn-primary btn-lg mb-3" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}" style="border-radius: 50px; font-weight: 500; background-color: #0077b5; border-color: #0077b5;">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                </div>
+        </div>        
+    </div>
+</div>

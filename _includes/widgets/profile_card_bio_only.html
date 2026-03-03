@@ -1,0 +1,132 @@
+<div class="card mb-3 fade-in-up fade-in-up-2">
+  <div class="card-body">
+    <!-- Bio -->
+    <div class="section-heading">
+      <i class="fas fa-user" style="color:var(--accent); font-size:0.7rem;"></i>
+      About Me
+    </div>
+    <p class="text-profile-bio mb-4">
+      {{ site.data.profile.short_bio }}
+    </p>
+    <!-- Skills -->
+    {% if site.data.profile.skills %}
+    <div class="section-heading">
+      <i class="fas fa-code" style="color:var(--accent); font-size:0.7rem;"></i>
+      Tech Stack
+    </div>
+    <div class="mb-4">
+      {% for group in site.data.profile.skills %}
+        {% for item in group.items %}
+          <span class="skill-tag">{{ item }}</span>
+        {% endfor %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <!-- CV Button -->
+    <a href="/antonio.radesca-portfolio/assets/pdf/CV1.pdf"
+       class="cv-download-btn"
+       download>
+      <span class="cv-btn-icon">
+        <i class="fas fa-file-arrow-down"></i>
+      </span>
+      <span class="cv-btn-content">
+        <span class="cv-btn-label">Curriculum Vitae</span>
+        <span class="cv-btn-sub">Download PDF</span>
+      </span>
+      <span class="cv-btn-arrow">
+        <i class="fas fa-arrow-down"></i>
+      </span>
+    </a>
+    <!-- Projects Button -->
+    <a href="/antonio.radesca-portfolio/projects"
+       class="cv-download-btn"
+       style="margin-top: 0.8rem; display: flex;">
+      <span class="cv-btn-icon">
+        <i class="fas fa-folder-open"></i>
+      </span>
+      <span class="cv-btn-content">
+        <span class="cv-btn-label">My Projects</span>
+        <span class="cv-btn-sub">Check out what I've built</span>
+      </span>
+      <span class="cv-btn-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  </div>
+</div>
+<style>
+.cv-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(0,102,255,0.1) 0%, rgba(0,102,255,0.04) 100%);
+  border: 1px solid rgba(0,102,255,0.3);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.cv-download-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,102,255,0.18), rgba(0,102,255,0.08));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.cv-download-btn:hover {
+  border-color: rgba(0,102,255,0.6);
+  box-shadow: 0 4px 24px rgba(0,102,255,0.2);
+  transform: translateY(-2px);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.cv-download-btn:hover::before { opacity: 1; }
+.cv-download-btn:hover .cv-btn-arrow { transform: translateY(3px); }
+.cv-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0,102,255,0.35);
+}
+.cv-btn-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+.cv-btn-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.cv-btn-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.cv-btn-arrow {
+  font-size: 0.85rem;
+  color: var(--accent);
+  transition: transform 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+</style>

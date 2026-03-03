@@ -1,0 +1,49 @@
+<div class="card border-0 shadow-sm mb-3 fade-in-up fade-in-up-3" style="border-radius: 16px;">
+  <div class="card-body p-4">
+    <div class="row">
+
+      {% if site.data.profile.education %}
+      <div class="col-lg-6 mb-3">
+        <div class="section-heading">
+          <i class="fas fa-graduation-cap" style="color:var(--accent); font-size:0.7rem;"></i>
+          Education
+        </div>
+        {% for item in site.data.profile.education %}
+        <div class="timeline-item">
+          {% if item.logo %}
+          <img src="{{ item.logo | relative_url }}" class="timeline-logo" alt="{{ item.name }}" />
+          {% endif %}
+          <div class="timeline-content">
+            <div class="timeline-title">{{ item.name }}</div>
+            <div class="timeline-role">{{ item.position }}</div>
+          </div>
+          <div class="timeline-date">{{ item.date }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if site.data.profile.experience %}
+      <div class="col-lg-6 mb-3">
+        <div class="section-heading">
+          <i class="fas fa-briefcase" style="color:var(--accent); font-size:0.7rem;"></i>
+          Experience
+        </div>
+        {% for item in site.data.profile.experience %}
+        <div class="timeline-item">
+          {% if item.logo %}
+          <img src="{{ item.logo | relative_url }}" class="timeline-logo" alt="{{ item.name }}" />
+          {% endif %}
+          <div class="timeline-content">
+            <div class="timeline-title">{{ item.name }}</div>
+            <div class="timeline-role">{{ item.position }}</div>
+            <div class="timeline-date" style="white-space:normal; margin-top:2px;">{{ item.date }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
