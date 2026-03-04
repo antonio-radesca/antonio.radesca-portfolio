@@ -44,6 +44,9 @@ skills:
       - name: C
         icon: "fas fa-code"
         color: "#5c6bc0"
+      - name: Assembly
+        icon: "fab fa-cogs"
+        color: "#f7df1e"
   - group: Tools & IDEs
     items:
       - name: PyCharm
