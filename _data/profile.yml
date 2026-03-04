@@ -31,6 +31,36 @@ experience:
     date: "Sep 2025 - Nov 2025"
 skills:
   - group: Languages
-    items: ["Python", "SQL", "Java", "C"]
+    items:
+      - name: Python
+        icon: "fab fa-python"
+        color: "#3776ab"
+      - name: SQL
+        icon: "fas fa-database"
+        color: "#336791"
+      - name: Java
+        icon: "fab fa-java"
+        color: "#f89820"
+      - name: C
+        icon: "fas fa-code"
+        color: "#5c6bc0"
   - group: Tools & IDEs
-    items: ["PyCharm", "NetBeans", "MATLAB", "PostgreSQL", "VS Code"]
+    items:
+      - name: PyCharm
+        icon: "fas fa-circle"
+        color: "#21d789"
+      - name: NetBeans
+        icon: "fas fa-circle"
+        color: "#1b6ac6"
+      - name: MATLAB
+        icon: "fas fa-chart-line"
+        color: "#e16737"
+      - name: PostgreSQL
+        icon: "fas fa-database"
+        color: "#336791"
+      - name: VS Code
+        icon: "fas fa-code"
+        color: "#007acc"
+      - name: Grafana
+        icon: "fas fa-chart-line"
+        color: "#f4511e"

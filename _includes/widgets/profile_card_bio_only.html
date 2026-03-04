@@ -9,23 +9,24 @@
       {{ site.data.profile.short_bio }}
     </p>
 
-    <!-- Skills -->
-     {% if site.data.profile.skills %}
+<!-- Skills -->
+{% if site.data.profile.skills %}
 <div class="section-heading">
   <i class="fas fa-code" style="color:var(--accent); font-size:0.7rem;"></i>
   Tech Stack
 </div>
 <div class="mb-4">
   {% for group in site.data.profile.skills %}
-  <div style="margin-bottom: 0.6rem;">
-    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
-                text-transform: uppercase; letter-spacing: 0.1em;
-                color: var(--text-muted); margin-bottom: 0.4rem;">
-      {{ group.group }}
-    </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+  <div style="margin-bottom: 0.8rem;">
+    <div class="tech-group-label" style="margin-bottom: 0.4rem;">{{ group.group }}</div>
+    <div class="tech-group-items">
       {% for item in group.items %}
-        <span class="skill-tag">{{ item }}</span>
+      <div class="tech-pill">
+        <span class="tech-pill-icon" style="background: {{ item.color }};">
+          <i class="{{ item.icon }}"></i>
+        </span>
+        {{ item.name }}
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -140,4 +141,11 @@
   position: relative;
   z-index: 1;
 }
+/* Tech Stack */
+.tech-group-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+.tech-group-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tech-pill { display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 0.3rem 0.7rem 0.3rem 0.35rem; font-size: 0.8rem; font-weight: 500; color: var(--text-primary); transition: all 0.2s ease; cursor: default; }
+.tech-pill:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
+.tech-pill-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 5px; font-size: 0.65rem; color: #fff; flex-shrink: 0; }
+
 </style>
