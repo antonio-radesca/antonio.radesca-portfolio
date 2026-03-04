@@ -8,19 +8,30 @@
     <p class="text-profile-bio mb-4">
       {{ site.data.profile.short_bio }}
     </p>
+
     <!-- Skills -->
-    {% if site.data.profile.skills %}
-    <div class="section-heading">
-      <i class="fas fa-code" style="color:var(--accent); font-size:0.7rem;"></i>
-      Tech Stack
+     {% if site.data.profile.skills %}
+<div class="section-heading">
+  <i class="fas fa-code" style="color:var(--accent); font-size:0.7rem;"></i>
+  Tech Stack
+</div>
+<div class="mb-4">
+  {% for group in site.data.profile.skills %}
+  <div style="margin-bottom: 0.6rem;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+                text-transform: uppercase; letter-spacing: 0.1em;
+                color: var(--text-muted); margin-bottom: 0.4rem;">
+      {{ group.group }}
     </div>
-    <div class="mb-4">
-      {% for group in site.data.profile.skills %}
-        {% for item in group.items %}
-          <span class="skill-tag">{{ item }}</span>
-        {% endfor %}
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      {% for item in group.items %}
+        <span class="skill-tag">{{ item }}</span>
       {% endfor %}
     </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
     {% endif %}
     <!-- CV Button -->
     <a href="/antonio.radesca-portfolio/assets/pdf/CV1.pdf"

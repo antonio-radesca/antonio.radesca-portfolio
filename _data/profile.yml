@@ -29,3 +29,8 @@ experience:
     logo: "/assets/images/badges/garofalo.png"
     position: "Internship"
     date: "Sep 2025 - Nov 2025"
+skills:
+  - group: Languages
+    items: ["Python", "SQL", "Java", "C"]
+  - group: Tools & IDEs
+    items: ["PyCharm", "NetBeans", "MATLAB", "PostgreSQL", "VS Code"]
