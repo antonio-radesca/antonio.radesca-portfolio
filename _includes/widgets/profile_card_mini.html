@@ -58,23 +58,22 @@
                 </div>
 
                 <hr style="opacity: 0.12; margin: 0 -4px 12px;" />
+              
+<!-- Info Utili -->
+<div class="row mb-3">
+    <div class="col text-center" style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--text-secondary);">
+            <i class="fas fa-graduation-cap" style="color: var(--accent); margin-right: 5px;"></i>
+            Bachelor's Degree · 2025
+        </span>
+        <span style="font-size: 0.75rem; color: var(--text-secondary);">
+            <i class="fas fa-plane" style="color: var(--accent); margin-right: 5px;"></i>
+            Open to relocation
+        </span>
+    </div>
+</div>
 
-                <!-- Skill tags -->
-                <div class="row mb-3">
-                    <div class="col text-center" style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;">
-                        {% assign skills = "Python,SQL,Java,C" | split: "," %}
-                        {% for skill in skills %}
-                        <span style="font-size: 0.68rem; font-weight: 500;
-                                     background: var(--tag-bg, #f0f4ff); color: var(--accent, #4f8ef7);
-                                     border-radius: 20px; padding: 3px 10px;
-                                     border: 1px solid rgba(79,142,247,0.2);">
-                            {{ skill }}
-                        </span>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <hr style="opacity: 0.12; margin: 0 -4px 14px;" />
+<hr style="opacity: 0.12; margin: 0 -4px 14px;" />
 
                 <!-- Social buttons -->
                 <div class="row pt-1">
