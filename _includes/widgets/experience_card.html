@@ -37,6 +37,12 @@
           <div class="timeline-content">
             <div class="timeline-title">{{ item.name }}</div>
             <div class="timeline-role">{{ item.position }}</div>
+            {% if item.description %}
+            <div
+              style="font-size: 0.72rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-top: 3px;">
+              {{ item.description }}
+            </div>
+            {% endif %}
             <div class="timeline-date" style="white-space:normal; margin-top:2px;">{{ item.date }}</div>
           </div>
         </div>
