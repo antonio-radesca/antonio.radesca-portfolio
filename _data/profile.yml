@@ -25,6 +25,11 @@ education:
     position: "Bachelor's Degree in Computer Engineering (L-8) - DIEM"
     date: "December 2025"
 experience:
+  - name: "Pracal S.r.l."
+    logo: "/assets/images/badges/pracal.png"
+    position: "IT Systems & Infrastructure Specialist"
+    date: "Mar 2026 - Present"
+    description: "ERP · Infrastructure · Industrial IT · Networking"
   - name: "Garofalo & Partners"
     logo: "/assets/images/badges/garofalo.png"
     position: "Internship"
