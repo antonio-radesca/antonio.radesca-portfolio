@@ -32,27 +32,46 @@
   </div>
   {% endfor %}
 </div>
-
 {% endif %}
-    <!-- CV Button -->
-    <a href="/antonio.radesca-portfolio/assets/pdf/CV1.pdf"
-       class="cv-download-btn"
-       download>
-      <span class="cv-btn-icon">
-        <i class="fas fa-file-arrow-down"></i>
-      </span>
-      <span class="cv-btn-content">
-        <span class="cv-btn-label">Curriculum Vitae</span>
-        <span class="cv-btn-sub">Download PDF</span>
-      </span>
-      <span class="cv-btn-arrow">
-        <i class="fas fa-arrow-down"></i>
-      </span>
-    </a>
+
+    <!-- CV Button with dropdown -->
+    <div class="cv-dropdown-wrapper" style="margin-bottom: 0.8rem;">
+      <div class="cv-download-btn cv-dropdown-trigger" onclick="toggleCvDropdown()">
+        <span class="cv-btn-icon">
+          <i class="fas fa-file-arrow-down"></i>
+        </span>
+        <span class="cv-btn-content">
+          <span class="cv-btn-label">Curriculum Vitae</span>
+          <span class="cv-btn-sub">Download PDF</span>
+        </span>
+        <span class="cv-btn-arrow">
+          <i class="fas fa-chevron-down" id="cvChevron"></i>
+        </span>
+      </div>
+      <div class="cv-dropdown-menu" id="cvDropdownMenu">
+        <a href="/antonio.radesca-portfolio/assets/pdf/CV_IT.pdf" download class="cv-dropdown-item">
+          <span>🇮🇹</span>
+          <span class="cv-dropdown-text">
+            <span class="cv-dropdown-label">Italiano</span>
+            <span class="cv-dropdown-sub">Versione italiana</span>
+          </span>
+          <i class="fas fa-arrow-down" style="font-size:0.75rem; color:var(--accent);"></i>
+        </a>
+        <a href="/antonio.radesca-portfolio/assets/pdf/CV_EN.pdf" download class="cv-dropdown-item">
+          <span>🇬🇧</span>
+          <span class="cv-dropdown-text">
+            <span class="cv-dropdown-label">English</span>
+            <span class="cv-dropdown-sub">English version</span>
+          </span>
+          <i class="fas fa-arrow-down" style="font-size:0.75rem; color:var(--accent);"></i>
+        </a>
+      </div>
+    </div>
+
     <!-- Projects Button -->
     <a href="/antonio.radesca-portfolio/projects"
        class="cv-download-btn"
-       style="margin-top: 0.8rem; display: flex;">
+       style="display: flex;">
       <span class="cv-btn-icon">
         <i class="fas fa-folder-open"></i>
       </span>
@@ -80,6 +99,7 @@
   transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .cv-download-btn::before {
   content: '';
@@ -141,11 +161,76 @@
   position: relative;
   z-index: 1;
 }
+
+/* CV Dropdown */
+.cv-dropdown-wrapper {
+  position: relative;
+}
+.cv-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid rgba(0,102,255,0.3);
+  border-radius: 12px;
+  margin-top: 6px;
+  overflow: hidden;
+  animation: fadeInUp 0.2s ease;
+}
+.cv-dropdown-menu.open {
+  display: flex;
+}
+.cv-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--border);
+}
+.cv-dropdown-item:last-child { border-bottom: none; }
+.cv-dropdown-item:hover {
+  background: rgba(0,102,255,0.08);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.cv-dropdown-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cv-dropdown-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.cv-dropdown-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+}
+
 /* Tech Stack */
 .tech-group-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #e6edf3; }
 .tech-group-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tech-pill { display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 0.3rem 0.7rem 0.3rem 0.35rem; font-size: 0.8rem; font-weight: 500; color: var(--text-primary); transition: all 0.2s ease; cursor: default; }
 .tech-pill:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
 .tech-pill-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 5px; font-size: 0.65rem; color: #fff; flex-shrink: 0; }
-
 </style>
+
+<script>
+function toggleCvDropdown() {
+  var menu = document.getElementById('cvDropdownMenu');
+  var chevron = document.getElementById('cvChevron');
+  menu.classList.toggle('open');
+  chevron.style.transform = menu.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.cv-dropdown-wrapper')) {
+    document.getElementById('cvDropdownMenu').classList.remove('open');
+    document.getElementById('cvChevron').style.transform = 'rotate(0deg)';
+  }
+});
+</script>
