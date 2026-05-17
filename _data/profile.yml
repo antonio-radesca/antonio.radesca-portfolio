@@ -2,7 +2,8 @@ primary_name: "Antonio Radesca"
 navbar_name: "AR.dev"
 email: "antonio.radesca.work@gmail.com"
 positions:
-  - name: Computer Engineer
+  - name: Software Engineer
+    company: Phaenomena S.r.l.
     logo: /assets/images/badges/logo_standard.png
 github: antonio-radesca
 linkedin: "antonio-radesca-99445939b/"
