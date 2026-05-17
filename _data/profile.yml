@@ -1,0 +1,93 @@
+primary_name: "Antonio Radesca"
+navbar_name: "AR.dev"
+email: "antonio.radesca.work@gmail.com"
+positions:
+  - name: Computer Engineer
+    logo: /assets/images/badges/logo_standard.png
+github: antonio-radesca
+linkedin: "antonio-radesca-99445939b/"
+short_bio_text_justify: false
+short_bio: |
+  <p>
+  <strong>Hello everyone!</strong> My name is <strong>Antonio Radesca</strong> and I'm a Computer Engineering graduate from the University of Salerno with a passion for building things that actually work. My go-to stack includes C, Java, SQL and Python, but I'm always eager to dive into new challenges and pick up whatever the problem requires.
+  </p>
+  <p>
+  When I'm not staring at code, you'll probably find me strumming my guitar, lost in a video game or a good movie, or playing sports — I'm a firm believer in the power of a good team, both on the field and in the office.
+  </p>
+  <p>
+  I'm a proactive learner and a natural team player, ready to bring both technical skills and positive energy to an environment where I can help build efficient, data-driven solutions.
+  </p>
+portrait_url: "/assets/photos/Immagine_profilo.PNG"
+education:
+  - name: "University of Salerno"
+    logo: "/assets/images/badges/logo_standard.png"
+    position: "Bachelor's Degree in Computer Engineering (L-8) - DIEM"
+    date: "December 2025"
+experience:
+  - name: "Phaenomena S.r.l."
+    logo: "/assets/images/badges/phaenomena.png"
+    position: "Software Engineer"
+    date: "May 2026 - Present"
+    description: "Web Development · Debugging and Testing · Maintenance and Optimization"
+  - name: "Pracal S.r.l."
+    logo: "/assets/images/badges/pracal.png"
+    position: "IT Consultant"
+    date: "Mar 2026 - Apr 2026"
+    description: "ERP · Infrastructure · Industrial IT · Networking"
+  - name: "Garofalo & Partners"
+    logo: "/assets/images/badges/garofalo.png"
+    position: "Internship"
+    date: "Sep 2025 - Nov 2025"
+    description: "Industry 4.0 · FastAPI · PostgreSQL · Modbus"
+skills:
+  - group: Languages
+    items:
+      - name: Python
+        icon: "fab fa-python"
+        color: "#3776ab"
+      - name: SQL
+        icon: "fas fa-database"
+        color: "#336791"
+      - name: Java
+        icon: "fab fa-java"
+        color: "#f89820"
+      - name: C
+        icon: "fas fa-code"
+        color: "#5c6bc0"
+      - name: Assembly
+        icon: "fab fa-cogs"
+        color: "#f7df1e"
+      - name: C#
+        icon: "fab fa-microsoft"
+        color: "#9b4f96"
+      - name: JavaScript
+        icon: "fab fa-js"
+        color: "#f7df1e"
+  - group: Frameworks
+    items:
+      - name: .NET
+        icon: "fab fa-microsoft"
+        color: "#512bd4"
+      - name: React
+        icon: "fab fa-react"
+        color: "#61dafb"
+  - group: Tools & IDEs
+    items:
+      - name: PyCharm
+        icon: "fas fa-circle"
+        color: "#21d789"
+      - name: NetBeans
+        icon: "fas fa-circle"
+        color: "#1b6ac6"
+      - name: MATLAB
+        icon: "fas fa-chart-line"
+        color: "#e16737"
+      - name: PostgreSQL
+        icon: "fas fa-database"
+        color: "#336791"
+      - name: VS Code
+        icon: "fas fa-code"
+        color: "#007acc"
+      - name: Grafana
+        icon: "fas fa-chart-line"
+        color: "#f4511e"
